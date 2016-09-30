@@ -6,13 +6,13 @@ from utilFunctions import wavread
 """
 A1-Part-2: Basic operations with audio
 
-Write a function that reads an audio file and returns the minimum and the maximum values of the audio 
-samples in that file. 
+Write a function that reads an audio file and returns the minimum and the maximum values of the audio
+samples in that file.
 
-The input to the function is the wav file name (including the path) and the output should be two floating 
+The input to the function is the wav file name (including the path) and the output should be two floating
 point values returned as a tuple.
 
-If you run your code using oboe-A4.wav as the input, the function should return the following output:  
+If you run your code using oboe-A4.wav as the input, the function should return the following output:
 (-0.83486432, 0.56501967)
 """
 def minMaxAudio(inputFile):
@@ -23,4 +23,5 @@ def minMaxAudio(inputFile):
         A tuple of the minimum and the maximum value of the audio samples, like: (min_val, max_val)
     """
     ## Your code here
-
+    sr, x = wavread(inputFile)
+    return x.min(), x.max()
